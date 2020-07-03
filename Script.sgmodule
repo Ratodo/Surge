@@ -84,4 +84,4 @@ WoNiuShuiMian = requires-body=1,max-size=0,script-path=https://raw.githubusercon
 XMind = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/XMind.js,type=http-response,pattern=https:\/\/www\.xmind\.cn\/\_res\/devices
 
 [MITM]
-hostname = api.m.jd.com,ios.prod.ftl.netflix.com,trade-acs.m.taobao.com,mp.weixin.qq.com,account.wps.cn,app.bilibili.com,api.bilibili.com,api.live.bilibili.com,api.zhihu.com,www.zhihu.com,vip1.kuwo.cn,api.gamer.com.tw,p.du.163.com,api.ithome.com,api.psy-1.com,snailsleep.net,www.xmind.cn
+hostname = %APPEND% api.m.jd.com,ios.prod.ftl.netflix.com,trade-acs.m.taobao.com,mp.weixin.qq.com,account.wps.cn,app.bilibili.com,api.bilibili.com,api.live.bilibili.com,api.zhihu.com,www.zhihu.com,vip1.kuwo.cn,api.gamer.com.tw,p.du.163.com,api.ithome.com,api.psy-1.com,snailsleep.net,www.xmind.cn
