@@ -31,9 +31,8 @@ Single_Rating = type=http-response,pattern=^https?://ios\.prod\.ftl\.netflix\.co
 
 # > Bilibili
 Bilibili_1080P+ = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/Surge/master/Script/BiliHD.js
-Bilibili_Fav = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/space\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20space.js
-Bilibili_tab = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/resource/show/tab\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20tab.js
-Bilibili_feed = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/feed/index\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20feed.js
+Bilibili_Tab = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/resource/show/tab\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20tab.js
+Bilibili_Feed = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/feed/index\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20feed.js
 Bilibili_Account = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/account/mine\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20account.js
 Bilibili_View = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/view\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20view%20relate.js
 Bilibili_Reply = type=http-response,requires-body=1,max-size=0,pattern=https://api.bilibili.com/x/v2/reply/main\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20reply.js
