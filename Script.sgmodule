@@ -16,14 +16,6 @@ URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT
 (?<=\?version_code=)16..(?=.?.?&) 1 307 
 
 [Script]
-# > Cron
-JD_Checkin = type=cron,cronexp=1 0 0 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js,script-update-interval=0
-IQIYI_Checkin = type=cron,cronexp=15 0 0 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js,script-update-interval=0
-Manga_Checkin = type=cron,cronexp=30 0 0 * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js,script-update-interval=0
-Netease_Checkin = type=cron,cronexp=35 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.js,script-update-interval=0
-SMZDM_Checkin = type=cron,cronexp=40 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/smzdm/smzdm.js,script-update-interval=0
-Epic_Free= type=cron,cronexp=0 8 */7 * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/epic.js
-
 # > JD
 JD_OpenAD = type=http-response,pattern=^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Ratodo/Loon/master/JD_OpenAD.js,script-update-interval=0
 JD_Price = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js,script-update-interval=0
