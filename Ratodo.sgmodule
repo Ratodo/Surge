@@ -9,8 +9,8 @@ URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-
 URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJECT
 URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT
 # > 个人设置
-RULE-SET,https://ybgx.me/1kv5,REJECT,update-interval=604800 // AD
-RULE-SET,https://ybgx.me/uo3h,DIRECT,update-interval=604800 //APPLE
+RULE-SET,https://ybgx.me/adblock,REJECT,update-interval=604800 // AD
+RULE-SET,https://ybgx.me/apple,DIRECT,update-interval=604800 //APPLE
 RULE-SET,SYSTEM,DIRECT
 GEOIP,CN,DIRECT
 
