@@ -3,22 +3,70 @@
 #!system=ios
 
 [Rule]
-# > 京东  去启动广告
+# > JD Remove AD
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-TINYGIF
-# > 哔哩哔哩 去广告 
+# > Bilibili Remove AD
 URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJECT
 URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT
-# > 个人设置
-RULE-SET,https://ybgx.me/adblock,REJECT,update-interval=604800 // AD
-RULE-SET,https://ybgx.me/apple,DIRECT,update-interval=604800 //APPLE
+# > Personal Setting
+RULE-SET,https://ybgx.me/adblock,REJECT,update-interval=604800
+RULE-SET,https://ybgx.me/apple,DIRECT,update-interval=604800
 RULE-SET,SYSTEM,DIRECT
 GEOIP,CN,DIRECT
 
 [URL Rewrite]
-# > TikTok 解锁
+# > Unlock TikTok
 (?<=_region=)CN(?=&) JP 307
 (?<=&app_version=)16..(?=.?.?&) 1 307
-(?<=\?version_code=)16..(?=.?.?&) 1 307 
+(?<=\?version_code=)16..(?=.?.?&) 1 307
+# > Remove AD (From NobyDa)
+# Netease Music
+^https?:\/\/interface\.music\.163\.com\/eapi\/ad - reject
+^https?:\/\/iadmusicmat\.music.126.net\/.*jpg$ - reject
+^https?:\/\/p\.c\.music\.126.net\/.*jpg$ - reject
+# 10010
+^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) - reject
+^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) - reject
+# Douyu
+^https?:\/\/capi\.douyucdn\.cn\/lapi\/sign\/app(api)?\/getinfo\?client_sys=ios - reject
+^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update - reject
+^https?:\/\/capi\.douyucdn\.cn\/api\/v1\/getStartSend?client_sys=ios - reject
+^https?:\/\/douyucdn\.cn\/.+\/appapi\/getinfo - reject
+^https?:\/\/rtbapi.douyucdn.cn\/japi\/sign\/app\/getinfo - reject
+^https?:\/\/staticlive\.douyucdn\.cn\/.+\/getStartSend - reject
+^https?:\/\/staticlive\.douyucdn\.cn\/upload\/signs\/ - reject
+^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo - reject
+# Eleme
+^https?:\/\/elemecdn\.com\/.+\/sitemap - reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/640\/h\/\d{3,4} - reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/750\/h\/\d{3,4} - reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+\.mp4 - reject
+^https?:\/\/cube\.elemecdn\.com\/.*\.mp4\? - reject
+# Meituan
+^https?:\/\/img\.meituan\.net\/midas\/ - reject
+^https?:\/\/img\.meituan\.net\/(display|midas)\/.+\.(gif|jpg) - reject
+^https?:\/\/img\.meituan\.net\/midas\/.*@\d{4}h - reject
+^https?:\/\/img\.meituan\.net\/display\/\w+\.jpg\.webp - reject
+# SMZDM
+^https?:\/\/api\.smzdm\.com\/v1\/util\/loading - reject
+^https?:\/\/api\.smzdm\.com\/v2\/util\/banner - reject
+^https?:\/\/api\.smzdm\.com\/v\d\/util\/loading - reject
+^https?:\/\/app-api\.smzdm\.com\/util\/loading - reject
+# IQIYI
+^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/show.do - reject
+^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show - reject
+^https?:\/\/iface\.iqiyi\.com\/api\/getNewAdInfo - reject
+# Wechat
+^https?:\/\/mp\.weixin\.qq.com\/mp\/ad_complaint - reject
+^https?:\/\/mp\.weixin\.qq.com\/mp\/advertisement_report - reject
+^https?:\/\/mp\.weixin\.qq.com\/mp\/ad_video - reject
+^https?:\/\/mp\.weixin\.qq\.com\/(s|mp)\/(ad_|advertisement|getappmsgad|report|appmsgreport|appmsgpicreport) - reject
+# Bilibili
+^https?:\/\/ap(i|p)\.bilibili\.com\/((x\/v2|pgc)\/(search\/defaultword|season\/rank\/cn|splash\/)|(pgc/season/rank/cn|x/v2/(search/(defaultword|hot|recommend|resource)))) - reject
+# Nfmovies
+^https?:\/\/www\.nfmovies\.com\/pic\/tu\/ - reject
+^https?:\/\/www\.nfmovies\.com\/uploads\/images\/play\.jpg - reject
+^https?:\/\/www\.nfmovies\.com\/templets\/default\/images\/logos - reject
 
 [Script]
 # > Cron
@@ -30,8 +78,7 @@ SMZDM_Checkin = type=cron,cronexp=40 0 0 * * *,script-path=https://raw.githubuse
 Epic_Free = type=cron,cronexp=0 8 */7 * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/epic.js,script-update-interval=604800
 
 # > JD
-JD_OpenAD = type=http-response,pattern=^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Ratodo/Loon/master/JD_OpenAD.js,script-update-interval=0
-JD_Price = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js,script-update-interval=0
+JD_Price = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
 
 # > TaoBao
 TB_Price = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,type=http-request,pattern=^http://.+/amdc/mobileDispatch
@@ -66,10 +113,10 @@ ITHome = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.co
 ITHome = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/ITHome.js,type=http-response,pattern=^https?:\/\/api\.ithome\.com\/json\/(newslist|listpage)\/news
 
 # > Wechat
-WeChat = script-path=https://Choler.github.io/Surge/Script/WeChat.js,type=http-request,pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad
+WeChat = script-path=https://choler.github.io/Surge/Script/WeChat.js,type=http-request,pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad
 
 # > WPS
 WPS = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js,type=http-response,pattern=^https://account.wps.*/api/users/
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, ios.prod.ftl.netflix.com, trade-acs.m.taobao.com, mp.weixin.qq.com, account.wps.cn, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, api.zhihu.com, www.zhihu.com, api.gamer.com.tw, p.du.163.com, api.ithome.com, *.tiktokv.com, *.byteoversea.com, *.musical.ly, *.snssdk.com
+hostname = %APPEND% api.m.jd.com, ios.prod.ftl.netflix.com, trade-acs.m.taobao.com, mp.weixin.qq.com, account.wps.cn, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, api.zhihu.com, www.zhihu.com, api.gamer.com.tw, p.du.163.com, api.ithome.com, *.tiktokv.com, *.byteoversea.com, *.musical.ly, *.snssdk.com, interface.music.163.com, iadmusicmat.music.126.net, p1.music.126.net, .client.10010.com, capi.douyucdn.cn, staticlive.douyucdn.cn, rtbapi.douyucdn.cn, fuss10.elemecdn.com, cube.elemecdn.com, img.meituan.net, app-api.smzdm.com, api.smzdm.com, iface.iqiyi.com, act.vip.iqiyi.com, www.nfmovies.com
