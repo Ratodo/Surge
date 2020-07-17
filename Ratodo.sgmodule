@@ -76,7 +76,7 @@ Manga_Checkin = type=cron,cronexp=15 0 0 * * *,script-path=https://raw.githubuse
 Netease_Checkin = type=cron,cronexp=20 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.js,script-update-interval=604800
 SMZDM_Checkin = type=cron,cronexp=25 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/smzdm/smzdm.js,script-update-interval=604800
 Bilibili_Checkin = type=cron,cronexp=30 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/bilibili/bilibili.js,script-update-interval=604800
-Unicom_Checkin = type=cron,cronexp=20 2 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.js,script-update-interval=604800
+Unicom_Checkin = type=cron,cronexp=35 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.js,script-update-interval=604800
 Epic_Free = type=cron,cronexp=0 8 */7 * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/epic.js,script-update-interval=604800
 
 # > JD
