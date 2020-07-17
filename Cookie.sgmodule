@@ -8,6 +8,11 @@ IQIYI_Cookie = type=http-request,pattern=https?:\/\/.*\.iqiyi\.com\/.*authcookie
 Manga_Cookie = type=http-request,pattern=https:\/\/manga\.bilibili\.com\/.*\.User\/GetWallet,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js
 Netease_Cookie = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.cookie.js,type=http-request,pattern=^https:\/\/music.163.com\/weapi\/user\/level,requires-body=true
 SMZDM_Cookie = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/smzdm/smzdm.cookie.js,type=http-request,pattern=^https:\/\/www\.smzdm\.com\/?.?
+Bilibili_Cookie = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/bilibili/bilibili.cookie.js,type=http-request,pattern=^https:\/\/(www|live)\.bilibili\.com\/?.?
+10000_Cookie1 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js,type=http-request,pattern=^https:\/\/act.10010.com\/SigninApp\/signin\/querySigninActivity.htm
+10010_Cookie2 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js,type=http-request,pattern=^https:\/\/act.10010.com\/SigninApp(.*?)\/signin\/daySign
+10010_Cookie3 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js,type=http-request,pattern=^https:\/\/m.client.10010.com\/dailylottery\/static\/(textdl\/userLogin|active\/findActivityInfo)
+
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, manga.bilibili.com, *.iqiyi.com, music.163.com, *.smzdm.com
+hostname = %APPEND% api.m.jd.com, *.bilibili.com, *.iqiyi.com, music.163.com, *.smzdm.com, act.10010.com, m.client.10010.com
