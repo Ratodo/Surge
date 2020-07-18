@@ -10,7 +10,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT
 # > Personal Setting
 RULE-SET,https://ybgx.me/adblock,REJECT,update-interval=604800
-RULE-SET,https://ybgx.me/apple,DIRECT,update-interval=604800
 RULE-SET,SYSTEM,DIRECT
 GEOIP,CN,DIRECT
 
