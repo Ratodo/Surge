@@ -1,3 +1,7 @@
+#!name=Personal Module - By Ratodo
+#!desc=A collection of personally organized scripts and other rules from Github.
+#!system=ios
+
 [Rule]
 # > JD Remove AD
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-TINYGIF
