@@ -21,9 +21,6 @@ RULE-SET,https://ybgx.me/adblock,REJECT,update-interval=604800
 ^https?:\/\/interface\.music\.163\.com\/eapi\/ad - reject
 ^https?:\/\/iadmusicmat\.music.126.net\/.*jpg$ - reject
 ^https?:\/\/p\.c\.music\.126.net\/.*jpg$ - reject
-# 10010
-^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) - reject
-^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) - reject
 # Douyu
 ^https?:\/\/capi\.douyucdn\.cn\/lapi\/sign\/app(api)?\/getinfo\?client_sys=ios - reject
 ^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update - reject
@@ -106,4 +103,4 @@ WeChat = script-path=https://choler.github.io/Surge/Script/WeChat.js,type=http-r
 WPS = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js,type=http-response,pattern=^https://account.wps.*/api/users/
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, ios.prod.ftl.netflix.com, trade-acs.m.taobao.com, mp.weixin.qq.com, account.wps.cn, app.bilibili.com, api.bilibili.com, api.gamer.com.tw, p.du.163.com, api.ithome.com, *.tiktokv.com, *.byteoversea.com, *.musical.ly, *.snssdk.com, interface.music.163.com, iadmusicmat.music.126.net, p1.music.126.net, .client.10010.com, capi.douyucdn.cn, staticlive.douyucdn.cn, rtbapi.douyucdn.cn, fuss10.elemecdn.com, cube.elemecdn.com, img.meituan.net, app-api.smzdm.com, api.smzdm.com, iface.iqiyi.com, act.vip.iqiyi.com, www.nfmovies.com
+hostname = %APPEND% api.m.jd.com, ios.prod.ftl.netflix.com, trade-acs.m.taobao.com, mp.weixin.qq.com, account.wps.cn, app.bilibili.com, api.bilibili.com, api.gamer.com.tw, p.du.163.com, api.ithome.com, *.tiktokv.com, *.byteoversea.com, *.musical.ly, *.snssdk.com, interface.music.163.com, iadmusicmat.music.126.net, p1.music.126.net, capi.douyucdn.cn, staticlive.douyucdn.cn, rtbapi.douyucdn.cn, fuss10.elemecdn.com, cube.elemecdn.com, img.meituan.net, app-api.smzdm.com, api.smzdm.com, iface.iqiyi.com, act.vip.iqiyi.com, www.nfmovies.com
