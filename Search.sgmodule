@@ -15,17 +15,17 @@
 
 # 默认搜索
 # bi: 必应
-^https:\/\/www.baidu.com\/\s?wd=bi\+([^&]+).+ https://cn.bing.com/search?q=$1 302
+^https:\/\/m.baidu.com\/\s?wd=bi\+([^&]+).+ https://cn.bing.com/search?q=$1 302
 
 # bd: 百度
-^https:\/\/www.baidu.com\/\s?wd=bd\+([^&]+).+ https://www.baidu.com/s?wd=$1 302
+^https:\/\/m.baidu.com\/\s?wd=bd\+([^&]+).+ https://www.baidu.com/s?wd=$1 302
 
 # ddg: DuckDuckGo 
-^https:\/\/www.baidu.com\/\s?wd=ddg\+([^&]+).+ https://duckduckgo.com/?ia=about&q=$1 302
+^https:\/\/m.baidu.com\/\s?wd=ddg\+([^&]+).+ https://duckduckgo.com/?ia=about&q=$1 302
 
 # 无指令: Google
-^https:\/\/www.baidu.com\/\s?wd=([^&]+).+ https://www.google.com/search?q=$1 302
+^https:\/\/m.baidu.com\/\s?wd=([^&]+).+ https://www.google.com/search?q=$1 302
 
 
 [MITM]
-hostname = %APPEND% www.baidu.com
+hostname = %APPEND% m.baidu.com
