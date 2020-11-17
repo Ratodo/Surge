@@ -9,6 +9,8 @@ URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-
 RULE-SET,https://ybgx.me/adblock,REJECT,update-interval=604800
 
 [URL Rewrite]
+# Redirect Google Search Service
+^(http|https):\/\/(www.)?(g|google)\.cn https://www.google.com 302
 # > Remove AD (From NobyDa)
 # Netease Music
 ^https?:\/\/interface\.music\.163\.com\/eapi\/ad - reject
