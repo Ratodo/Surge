@@ -63,13 +63,6 @@ Netease_Checkin = type=cron,cronexp=20 0 0 * * *,script-path=https://raw.githubu
 SMZDM_Checkin = type=cron,cronexp=25 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/smzdm/smzdm.js,script-update-interval=604800
 Epic_Free = type=cron,cronexp=0 8 */7 * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/epic.js,script-update-interval=604800
 
-# > JD
-JD_Price = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
-
-# > TaoBao
-TB_Price = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,type=http-request,pattern=^http://.+/amdc/mobileDispatch
-TB_Price = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,type=http-response,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail
-
 # > Netflix
 NF_Rating = script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,type=http-request,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D
 NF_Rating = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,type=http-response,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D
@@ -90,4 +83,4 @@ WeChat = script-path=https://choler.github.io/Surge/Script/WeChat.js,type=http-r
 WPS = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js,type=http-response,pattern=^https://account.wps.*/api/users/
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, ios.prod.ftl.netflix.com, trade-acs.m.taobao.com, mp.weixin.qq.com, account.wps.cn, api.gamer.com.tw, p.du.163.com, api.ithome.com, interface.music.163.com, iadmusicmat.music.126.net, p1.music.126.net, capi.douyucdn.cn, staticlive.douyucdn.cn, rtbapi.douyucdn.cn, fuss10.elemecdn.com, cube.elemecdn.com, img.meituan.net, app-api.smzdm.com, api.smzdm.com, iface.iqiyi.com, act.vip.iqiyi.com, www.nfmovies.com
+hostname = %APPEND% api.m.jd.com, ios.prod.ftl.netflix.com, mp.weixin.qq.com, account.wps.cn, api.gamer.com.tw, p.du.163.com, api.ithome.com, interface.music.163.com, iadmusicmat.music.126.net, p1.music.126.net, capi.douyucdn.cn, staticlive.douyucdn.cn, rtbapi.douyucdn.cn, fuss10.elemecdn.com, cube.elemecdn.com, img.meituan.net, app-api.smzdm.com, api.smzdm.com, iface.iqiyi.com, act.vip.iqiyi.com, www.nfmovies.com
