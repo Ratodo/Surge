@@ -6,7 +6,7 @@
 # > JD Remove AD
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-TINYGIF
 # > Personal Setting
-RULE-SET,https://ybgx.me/adblock,REJECT,update-interval=604800
+RULE-SET,https://raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list,REJECT,update-interval=604800
 
 [URL Rewrite]
 # Redirect Google Search Service
